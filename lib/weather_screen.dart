@@ -248,34 +248,3 @@ class _WeatherScreenState extends State<WeatherScreen> {
     );
   }
 }
-
-//   Widget IconsFunction(String hourlySky) {
-//     // Check the value of hourlySky and return different icons based on conditions
-//     if (hourlySky == "Clouds") {
-//       // Return the icon for Cloudy weather
-//       return Icon(Icons.cloud);
-//     } else if (hourlySky == "Sunny") {
-//       // Return the icon for Sunny weather
-//       return Icon(Icons.wb_sunny);
-//     } else if (hourlySky == "Rain") {
-//       // Return the icon for Rainy weather
-//       return Icon(Icons.beach_access);
-//     } else if (hourlySky == "Snowy") {
-//       // Return the icon for Snowy weather
-//       return Icon(Icons.ac_unit);
-//     } else if (hourlySky == "Clear") {
-//       // Return the icon for Snowy weather
-//       return Icon(Icons.sunny);
-//     } else {
-//       // Return a default icon if none of the conditions match
-//       return Icon(Icons.error);
-//     }
-//   }
-//   // String iconUrl ()
-//   // {
-//   //   var = iconType
-//   // }
-// }
-// //https://openweathermap.org/img/wn/10d@2x.png
-
-        

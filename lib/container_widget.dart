@@ -31,46 +31,43 @@ class WeatherBoxMain extends StatefulWidget {
 class _WeatherBoxMainState extends State<WeatherBoxMain> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Container(
-        height: widget.height,
-        width: widget.width,
-        child: Card(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(16),
-          ),
-          elevation: 10,
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(16),
-            child: BackdropFilter(
-              filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Column(
-                  children: [
-                    Text(
-                      "${widget.temperatureNow}°C",
-                      style: TextStyle(
-                        fontSize: widget.textsize,
-                        fontWeight: FontWeight.w500,
+    return Container(
+      height: widget.height,
+      width: widget.width,
+      child: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16),
+        ),
+        elevation: 10,
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(16),
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Text(
+                    "${widget.temperatureNow}°C",
+                    style: TextStyle(
+                      fontSize: widget.textsize,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  SizedBox(
+                    child: CircleAvatar(
+                      radius: 32,
+                      backgroundImage: NetworkImage(
+                        'https://openweathermap.org/img/wn/${widget.iconUrl}@2x.png',
                       ),
                     ),
-                    SizedBox(
-                      child: CircleAvatar(
-                        radius: 32,
-                        backgroundImage: NetworkImage(
-                          'https://openweathermap.org/img/wn/${widget.iconUrl}@2x.png',
-                        ),
-                      ),
+                  ),
+                  Text(
+                    widget.weatherNow,
+                    style: TextStyle(
+                      fontSize: widget.textsize,
                     ),
-                    Text(
-                      widget.weatherNow,
-                      style: TextStyle(
-                        fontSize: widget.textsize,
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
           ),
